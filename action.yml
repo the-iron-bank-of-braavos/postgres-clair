@@ -2,20 +2,10 @@ name: "Clair Build"
 description: "Create a PostgreSQL image with scan vulnerability"
 
 inputs:
-  image:
-    description: 'Container image to scan'
-    required: true
   local:
     description: 'It tells if the container image is deployed localy or remote. Values: yes | no'
     required: false
     default: 'yes'
-  report_format:
-    description: 'Report format. Values: xml | json | text'
-    required: false
-    default: 'json'
-  report_path:
-    description: 'Path to save the report'
-    required: true
   clair_timeout:
     description: 'Establish the timeout in seconds while waiting for Clair to be ready, useful for slower runners'
     required: false
@@ -31,4 +21,3 @@ runs:
         sed -i 's/SET_UPDATER/${{ inputs.updater }}/g' $GITHUB_ACTION_PATH/config.yaml
         chmod +x $GITHUB_ACTION_PATH/run.sh && $GITHUB_ACTION_PATH/run.sh ${{inputs.clair_timeout}}
       shell: bash
-
