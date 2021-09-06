@@ -28,26 +28,26 @@ matcher:
   migrations: true
   updater_sets:
   - "alpine"
-  - "aws"
+  #- "aws"
   - "debian"
-  - "oracle"
-  - "photon"
-  - "pyupio"
-  - "rhel"
-  - "suse"
-  - "ubuntu"
+  #- "oracle"
+  #- "photon"
+  #- "pyupio"
+  #- "rhel"
+  #- "suse"
+  #- "ubuntu"
 matchers:
   names:
   - "alpine"
-  - "aws"
+  #- "aws"
   - "debian"
-  - "oracle"
-  - "photon"
-  - "python"
-  - "rhel"
-  - "suse"
-  - "ubuntu"
-  - "crda"
+  #- "oracle"
+  #- "photon"
+  #- "python"
+  #- "rhel"
+  #- "suse"
+  #- "ubuntu"
+  #- "crda"
   config:
     crda:
       url: https://f8a-analytics-preview-2445582058137.production.gw.apicast.io/?user_key=3e42fa66f65124e6b1266a23431e3d08
