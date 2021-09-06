@@ -10,4 +10,4 @@ jobs:
       - name: Start PostgreSQL and clair
         uses: the-iron-bank-of-braavos/postgres-clair@master
         with:
-          clair_timeout: 1800
+          clair_timeout: 3600
