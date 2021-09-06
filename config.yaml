@@ -5,13 +5,13 @@ indexer:
   connstring: host=localhost port=5432 user=clair password=clair dbname=clair sslmode=disable
   scanlock_retry: 10
   layer_scan_concurrency: 5
-  migrations: true
+  migrations: false
 matcher:
   indexer_addr: "localhost:8080"
   connstring: host=localhost port=5432 user=clair password=clair dbname=clair sslmode=disable
   max_conn_pool: 100
   run: ""
-  migrations: true
+  migrations: false
 updaters:
   sets:
     - "alpine"
