@@ -20,4 +20,6 @@ runs:
     - run: |
         sed -i 's/SET_UPDATER/${{ inputs.updater }}/g' $GITHUB_ACTION_PATH/config.yaml
         chmod +x $GITHUB_ACTION_PATH/run.sh && $GITHUB_ACTION_PATH/run.sh ${{inputs.clair_timeout}}
+        docker commit  $(docker ps | grep postgres | awk '{ print $1 }') ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair
+        docker push ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair
       shell: bash
