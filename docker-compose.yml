@@ -8,7 +8,8 @@ services:
       - POSTGRES_USER=clair
       - POSTGRES_DB=clair
     #postgres:9.6.23
-    image: postgres@sha256:0c544a9de02082855b4ee592d59685403a8b51acdcd559cef4140ad9ef1396bd
+    #image: postgres@sha256:0c544a9de02082855b4ee592d59685403a8b51acdcd559cef4140ad9ef1396bd
+    image: ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair
     network_mode: host
     restart: always
     healthcheck:
