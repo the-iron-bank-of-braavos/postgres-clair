@@ -2,7 +2,7 @@
 # params:
 #        $1: clair readiness timeout in senconds
 
-docker-compose -f $GITHUB_ACTION_PATH/docker-compose.yml up -d registry postgres
+docker-compose -f $GITHUB_ACTION_PATH/docker-compose.yml up -d postgres
 
 timetorun=30
 stoptime=$((timetorun + $(date +%s)))
