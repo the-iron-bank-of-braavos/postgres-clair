@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=clair
+      - POSTGRES_USER=clair
+      - POSTGRES_DB=clair
+    #postgres:9.6.23
+    image: postgres@sha256:0c544a9de02082855b4ee592d59685403a8b51acdcd559cef4140ad9ef1396bd
+    network_mode: host
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clair -d clair"]
+      interval: 10s
+      timeout: 9s
+      retries: 3
+
+  clair:
+    container_name: clair
+    depends_on:
+      - postgres
+    #clair:4.2.0
+    image: quay.io/projectquay/clair@sha256:917df97fd182bf45d880649285b45e730a52e6cca4b70e3b0a810d4e39d43c9a
+    network_mode: host 
+    restart: always
+    volumes:
+      - ./reports:/reports:rw
+      - ./config.yaml:/config/config.yaml:ro
+      - /tmp:/tmp
+
