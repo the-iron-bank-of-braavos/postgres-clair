@@ -7,8 +7,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: List files
-        run: |
-          ls -la
       - name: Start PostgreSQL and clair
         uses: the-iron-bank-of-braavos/postgres-clair@master
+        with:
+          clair_timeout: 1800
