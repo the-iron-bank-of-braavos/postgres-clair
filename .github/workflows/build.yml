@@ -11,4 +11,4 @@ jobs:
         run: |
           ls -la
       - name: Start PostgreSQL and clair
-        uses: ./
+        uses: the-iron-bank-of-braavos/postgres-clair@master
