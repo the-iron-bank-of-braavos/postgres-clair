@@ -24,7 +24,7 @@ updaters:
     - "suse"
     - "ubuntu"
 matchers:
-  disable_updaters: false
+  disable_updaters: true
   config:
     crda:
       url: https://f8a-analytics-preview-2445582058137.production.gw.apicast.io/?user_key=3e42fa66f65124e6b1266a23431e3d08
