@@ -14,14 +14,14 @@ matcher:
   migrations: false
 updaters:
   sets:
-    - "alpine"
-    - "aws"
-    - "debian"
-    - "oracle"
-    - "photon"
-    - "pyupio"
-    - "rhel"
-    - "suse"
+    #- "alpine"
+    #- "aws"
+    #- "debian"
+    #- "oracle"
+    #- "photon"
+    #- "pyupio"
+    #- "rhel"
+    #- "suse"
     - "ubuntu"
 matchers:
   disable_updaters: true

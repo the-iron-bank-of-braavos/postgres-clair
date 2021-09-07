@@ -8,8 +8,8 @@ services:
       - POSTGRES_USER=clair
       - POSTGRES_DB=clair
     #postgres:9.6.23
-    #image: postgres@sha256:0c544a9de02082855b4ee592d59685403a8b51acdcd559cef4140ad9ef1396bd
-    image: ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair
+    image: postgres@sha256:0c544a9de02082855b4ee592d59685403a8b51acdcd559cef4140ad9ef1396bd
+    #image: ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair
     network_mode: host
     restart: always
     healthcheck:
@@ -22,8 +22,8 @@ services:
     container_name: clair
     depends_on:
       - postgres
-    #image: clair:4.2.2
-    image: quay.io/projectquay/clair@sha256:917df97fd182bf45d880649285b45e730a52e6cca4b70e3b0a810d4e39d43c9a
+    image: clair:4.2.2
+    #image: quay.io/projectquay/clair@sha256:917df97fd182bf45d880649285b45e730a52e6cca4b70e3b0a810d4e39d43c9a
     network_mode: host 
     restart: always
     volumes:
