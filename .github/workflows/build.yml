@@ -18,6 +18,7 @@ jobs:
         with:
           clair_timeout: 3600
   trivy-image-scan:
+    needs: build
     name: Trivy
     runs-on: ubuntu-latest
     steps:
