@@ -4,7 +4,7 @@ on: [push]
        
 jobs:  
   build:
-    name: Build
+    name: Build and image scan
     runs-on: ubuntu-latest
     steps:
       - name: Log in to the Container registry
@@ -17,11 +17,6 @@ jobs:
         uses: the-iron-bank-of-braavos/postgres-clair@master
         with:
           clair_timeout: 3600
-  trivy-image-scan:
-    needs: build
-    name: Trivy
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
