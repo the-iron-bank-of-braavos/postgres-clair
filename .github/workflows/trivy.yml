@@ -1,6 +1,6 @@
 name: Trivy Image Scan
 
-on: [pull_request]
+on: [push]
        
 jobs:  
   build:
@@ -12,7 +12,7 @@ jobs:
         with:
           image-ref: 'vulnerables/web-dvwa:latest'
           #image-ref: 'ghcr.io/the-iron-bank-of-braavos/postgres-clair/postgres:clair'
-          exit-code: '0'
+          exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
