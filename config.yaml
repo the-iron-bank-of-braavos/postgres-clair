@@ -12,8 +12,8 @@ matcher:
   max_conn_pool: 100
   run: ""
   migrations: true
-updaters:
-  sets:
+#pdaters:
+# sets:
     #- "alpine"
     #- "aws"
     #- "debian"
@@ -22,7 +22,7 @@ updaters:
     #- "pyupio"
     #- "rhel"
     #- "suse"
-    - "ubuntu"
+    #- "ubuntu"
 matchers:
   disable_updaters: false
   config:
