@@ -5,13 +5,13 @@ indexer:
   connstring: host=localhost port=5432 user=clair password=clair dbname=clair sslmode=disable
   scanlock_retry: 10
   layer_scan_concurrency: 5
-  migrations: false
+  migrations: true
 matcher:
   indexer_addr: "localhost:8080"
   connstring: host=localhost port=5432 user=clair password=clair dbname=clair sslmode=disable
   max_conn_pool: 100
   run: ""
-  migrations: false
+  migrations: true
 updaters:
   sets:
     #- "alpine"
@@ -24,7 +24,7 @@ updaters:
     #- "suse"
     - "ubuntu"
 matchers:
-  disable_updaters: true
+  disable_updaters: false
   config:
     crda:
       url: https://f8a-analytics-preview-2445582058137.production.gw.apicast.io/?user_key=3e42fa66f65124e6b1266a23431e3d08
@@ -35,4 +35,4 @@ notifier:
   connstring: host=localhost port=5432 user=clair password=clair dbname=clair sslmode=disable
   migrations: false
   delivery_interval: 1m
-  poll_interval: 5m
+  poll_interval: 60m
